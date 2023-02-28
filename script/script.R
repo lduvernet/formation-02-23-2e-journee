@@ -1,8 +1,6 @@
 # GESTION DE L'ENVIRONNEMENT ----
 
 
-library(ggplot2)
-library(dplyr)
 
 token  = yaml::read_yaml("secrets.yaml")$api_token
 

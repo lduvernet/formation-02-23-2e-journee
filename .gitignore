@@ -43,3 +43,4 @@ individu_reg.*
 *.png
 *.lintr
 secrets.yaml
+_targets/
