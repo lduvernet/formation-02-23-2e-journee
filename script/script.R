@@ -4,8 +4,7 @@
 library(ggplot2)
 library(dplyr)
 
-api_token <- "trotskitueleski$1917"
-
+token  = yaml::read_yaml("secrets.yaml")$api_token
 
 
 # DEFINITION DES FONCTIONS ----

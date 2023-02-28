@@ -42,3 +42,4 @@ vignettes/*.pdf
 individu_reg.*
 *.png
 *.lintr
+secrets.yaml
