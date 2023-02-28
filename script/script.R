@@ -12,8 +12,8 @@ source("script/functions.R", encoding = "UTF-8")
 # IMPORT DES DONNEES ----
 
 
-df <- readr::read_csv2(
-  "individu_reg.csv",
+df <- arrow::read_parquet(
+  "individu_reg.parquet",
   col_select = c("region", "aemm", "aged", "anai", "catl", "cs1", "cs2", "cs3", "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp", "trans", "ur")
 )
 
