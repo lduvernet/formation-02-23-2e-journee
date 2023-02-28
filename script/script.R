@@ -6,25 +6,7 @@ library(dplyr)
 
 token  = yaml::read_yaml("secrets.yaml")$api_token
 
-
-# DEFINITION DES FONCTIONS ----
-
-
-decennie_a_partir_annee <- function(annee) {
-  return(annee - annee %% 10)
-}
-
-fonction_de_stat_agregee <- function(a, b = "moyenne", ...) {
-  if (b == "moyenne") {
-    x <- mean(a, na.rm = TRUE, ...)
-  } else if (b == "ecart-type" || b == "sd") {
-    x <- sd(a, na.rm = TRUE, ...)
-  } else if (b == "variance") {
-    x <- var(a, na.rm = TRUE, ...)
-  }
-  return(x)
-}
-
+source("script/functions.R", encoding = "UTF-8")
 
 
 # IMPORT DES DONNEES ----
@@ -62,8 +44,8 @@ df3 %>%
 
 summarise(group_by(df, aged), n())
 
-fonction_de_stat_agregee(df %>% filter(sexe == "Homme") %>% pull(aged))
-fonction_de_stat_agregee(df %>% filter(sexe == "Femme") %>% pull(aged))
+stat_des(df %>% filter(sexe == "Homme") %>% pull(aged))
+stat_des(df %>% filter(sexe == "Femme") %>% pull(aged))
 
 
 
